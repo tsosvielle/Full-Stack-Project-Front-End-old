@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe by Trevor Sosvielle</title>
+      <link rel="stylesheet" type="text/scss" href="/Users/trevor/sei/projects/full-stack-front-end/assets/styles/index.scss">
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +13,47 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Collaborator</h1>
+<input id='new-user' type="submit" value="New User">
+<input id='returning-user' type="submit" value="Returning User">
+
+<form id='sign-up'>
+<input class='signUpFields' type="email" name="credentials[email]" placeholder="email">
+<input class='signUpFields' type="text" name="credentials[password]" placeholder="password">
+<input class='signUpFields'type="text" name="credentials[password_confirmation]" placeholder="password_confirmation">
+<input id='signUpButton' type="submit" value="Sign Up!">
+</form>
+<form id="sign-in">
+<input class='sign-in-fields'type="email" name="credentials[email]" placeholder="email"
+required>
+<input class='sign-in-fields'type="text" name="credentials[password]" placeholder="password">
+<input id='signInButton'type="submit" value="Sign In!">
+</form>
+<form id="change-password">
+<input type="password" name="passwords[old]" placeholder="old password">
+<input type="password" name="passwords[new]" placeholder="new password">
+  <input type="submit" value="Change Password!">
+</form>
+<input id='user-management' type="submit" value="Manage account!">
+<form id="sign-out">
+<input type="submit" value="Sign Out!">
+</form>
+
+<input id='postNewProject' type="submit" value="Post a project">
+
+<form id='newProject'>
+  <input type="text" name="project[project_name]" placeholder="project name">
+  <input type="date" name="project[date]" placeholder="date created">
+  <input type="text" name="project[description]" placeholder="project description">
+  <input type="text" name="project[team_needs]" placeholder="team member requests">
+  <input type="email" name="project[contact_email]" placeholder="project lead email">
+  <input type="submit" value="Post!">
+</form>
+
+<h1 id='message' class='message'></h1>
+
+
+
+
     </body>
 </html>
