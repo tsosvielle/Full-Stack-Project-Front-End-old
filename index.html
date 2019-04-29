@@ -50,6 +50,20 @@ required>
   <input type="submit" value="Post!">
 </form>
 
+<form id='updateProject'>
+  <input type="text" name="project[project_name]" placeholder="project name">
+  <input type="date" name="project[date]" placeholder="date created">
+  <input type="text" name="project[description]" placeholder="project description">
+  <input type="text" name="project[team_needs]" placeholder="team member requests">
+  <input type="email" name="project[contact_email]" placeholder="project lead email">
+  <input type="submit" value="Change a post">
+</form>
+
+<div class="nav-buttons">
+        <button id="getProjectsButton" class="btn btn-info mr-2">View all projects</button>
+        <button id="clearProjectsButton" class="btn btn-outline-info">Clear view</button>
+      </div>
+
 <h1 id='message' class='message'></h1>
 
 

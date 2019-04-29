@@ -1,5 +1,6 @@
 'use strict'
 const store = require('../store')
+const showProjectsTemplate = require('../templates/book-listing.handlebars')
 
 const signUpSuccess = function (data) {
   $('form').trigger('reset')
@@ -76,8 +77,10 @@ const newProjectFailure = function (data) {
   $('#message').text('Error beep boop')
 }
 
-const getProjectSuccess = function (data) {
-  $('form').trigger('reset')
+const getProjectsSuccess = (data) => {
+  console.log(data)
+  const showProjectsHtml = showProjectsTemplate({ projects: data.projects })
+  $('.content').append(showProjectsHtml)
 }
 
 const getProjectFailure = function (data) {

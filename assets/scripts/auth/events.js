@@ -67,13 +67,13 @@ const onNewProject = function (event) {
     .catch(ui.newProjectFailure)
 }
 
-const showProjectsClick = function (event) {
+const onShowProjects = (event) => {
   event.preventDefault()
-
-  api.getGames()
+  api.getProjects()
     .then(ui.getProjectsSuccess)
-    .catch(ui.getProjectsFailure)
+    .catch(ui.failure)
 }
+
 
 const onUpdateProject = function (event) {
   event.preventDefault()
@@ -103,6 +103,7 @@ const addHandlers = function () {
   $('#user-management').on('click', accountClick)
   $('#postNewProject').on('click', ui.projectReveal)
   $('#newProject').on('submit', onNewProject)
+  $('#getBooksButton').on('click', onGetBooks)
 }
 
 module.exports = {

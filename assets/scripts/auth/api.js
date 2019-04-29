@@ -46,26 +46,6 @@ const signOut = function () {
   })
 }
 
-const newGame = function () {
-  return $.ajax({
-    url: config.apiUrl + '/games',
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-
-const getGames = function () {
-  return $.ajax({
-    url: config.apiUrl + '/games?over=true',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-
 const updateGame = function (index, value, bool) {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game.id,
@@ -111,6 +91,6 @@ module.exports = {
   signIn,
   changePassword,
   signOut,
-  newProject.
+  newProject,
   getProjects
 }
