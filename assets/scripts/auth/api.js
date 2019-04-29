@@ -46,25 +46,6 @@ const signOut = function () {
   })
 }
 
-const updateGame = function (index, value, bool) {
-  return $.ajax({
-    url: config.apiUrl + '/games/' + store.game.id,
-    method: 'PATCH',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data: {
-      game: {
-        cell: {
-          index: index,
-          value: value
-        },
-        over: bool
-      }
-    }
-  })
-}
-
 const newProject = function (data) {
   return $.ajax({
     url: config.apiUrl + '/projects',
@@ -77,9 +58,36 @@ const newProject = function (data) {
 }
 
 const getProjects = function () {
-  return $.ajax({
-    url: config.apiUrl + '/projects',
+  const options =  { url: config.apiUrl + '/projects',
     method: 'GET',
+  }
+  if (store.user) {
+options.headers = {
+  Authorization: 'Token token=' + store.user.token
+}
+}
+  return $.ajax (options)
+}
+
+const deleteProject = function (id) {
+  return $.ajax({
+    url: config.apiUrl + `projects/${id}`,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const updateProject = function (id, data) {
+  console.log('api js ' + id + data)
+  return $.ajax({
+    url: config.apiUrl + `projects/${id}`,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
   })
 }
 
@@ -92,5 +100,7 @@ module.exports = {
   changePassword,
   signOut,
   newProject,
-  getProjects
+  getProjects,
+  deleteProject,
+  updateProject
 }

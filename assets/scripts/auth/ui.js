@@ -66,10 +66,14 @@ const projectReveal = function(){
   $('#newProject').show()
 }
 
+const clearProjects = function () {
+  $('#content').empty()
+}
+
 const newProjectSuccess = function (data) {
   $('form').trigger('reset')
   $('#postNewProject').hide()
-  console.log('new project', data)
+  $('.content').html(showProjectsHtml)
 }
 
 const newProjectFailure = function (data) {
@@ -78,9 +82,8 @@ const newProjectFailure = function (data) {
 }
 
 const getProjectsSuccess = (data) => {
-  console.log(data)
   const showProjectsHtml = showProjectsTemplate({ projects: data.projects })
-  $('.content').append(showProjectsHtml)
+  $('.content').html(showProjectsHtml)
 }
 
 const getProjectFailure = function (data) {
@@ -99,6 +102,7 @@ const updateProjectFailure = function (data) {
 
 const deleteProjectSuccess = function (data) {
   $('form').trigger('reset')
+  $('#message').text('Successfully Deleted')
 }
 
 const deleteProjectFailure = function (data) {
@@ -117,5 +121,12 @@ module.exports = {
   changePwFailure,
   signOutSuccess,
   signOutFailure,
-  projectReveal
+  projectReveal,
+  clearProjects,
+  getProjectFailure,
+  getProjectsSuccess,
+  deleteProjectFailure,
+  deleteProjectSuccess,
+  updateProjectSuccess,
+  updateProjectFailure
 }

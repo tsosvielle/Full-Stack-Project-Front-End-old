@@ -77,20 +77,26 @@ const onShowProjects = (event) => {
 
 const onUpdateProject = function (event) {
   event.preventDefault()
-
+  $('.modal-open').removeClass()
+   $('.fade').hide()
   const data = getFormFields(event.target)
-  api.changePassword(data)
-    .then(ui.updateProjectSuccess)
-    .catch(ui.updateProjectFailure)
+  const id = $(event.target).data('id')
+  api.updateProject(id, data)
+    .then(() => onShowProjects(event))
+    .catch(ui.failure)
 }
 
 const onDeleteProject = function (event) {
   event.preventDefault()
+  const id = $(event.target).data('id')
 
-  api.signOut()
-    .then(ui.deleteProjectSuccess)
+  api.deleteProject(id)
+    .then(() => onShowProjects(event))
     .catch(ui.deleteProjectFailure)
 }
+
+
+
 
 
 const addHandlers = function () {
@@ -103,7 +109,10 @@ const addHandlers = function () {
   $('#user-management').on('click', accountClick)
   $('#postNewProject').on('click', ui.projectReveal)
   $('#newProject').on('submit', onNewProject)
-  $('#getBooksButton').on('click', onGetBooks)
+  $('#getProjectsButton').on('click', onShowProjects)
+  $('#content').on('click', '.delete', onDeleteProject)
+  $('#content').on('submit', '.update-project', onUpdateProject)
+  $('#clearProjectsButton').on('click', ui.clearProjects)
 }
 
 module.exports = {
