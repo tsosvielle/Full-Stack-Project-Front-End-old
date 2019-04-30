@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: 'https://whispering-fortress-91173.herokuapp.com/',
+  production: 'https://secure-tor-78756.herokuapp.com/',
   development: 'http://localhost:4741/'
 }
 
