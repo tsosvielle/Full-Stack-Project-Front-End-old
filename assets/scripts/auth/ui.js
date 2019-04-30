@@ -103,7 +103,7 @@ const newProjectSuccess = function (data) {
   $('#postNewProject').hide()
   $('.content').html(showProjectsHtml)
   $('#newProject').hide()
-  $('#projectField').hide()
+  $('.projectField').hide()
   $('#message').text('Project posted!')
 }
 
