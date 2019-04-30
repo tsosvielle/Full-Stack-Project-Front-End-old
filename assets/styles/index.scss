@@ -2,11 +2,46 @@
 
 body {
   background-color: #CCE4EF;
+  background-image: url("https://images.pexels.com/photos/951240/pexels-photo-951240.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
 }
-
 .center-block {
   float: none;
 }
 
 .message {
+}
+
+.form {
+}
+
+.mybuttoncolor{
+  background-color: #669FFF;
+  color: white;
+
+}
+
+.mybutton {
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+}
+
+section {
+  background-color: #F5F5F5;
+  width: 25%;
+  border-width: 5px;
+  border: solid;
+  border-color: darkgrey;
+  margin: 10px;
+}
+
+#message {
+  background-color: #F5F5F5;
+  width: 25%;
+  border-color: darkgrey;
+  margin: 10px;
+}
+
+#title {
+  color: #b;
 }

@@ -11,4 +11,5 @@ $(() => {
   $('#user-management').hide()
   $('#newProject').hide()
   $('#postNewProject').hide()
+  $('#close').hide()
 })
