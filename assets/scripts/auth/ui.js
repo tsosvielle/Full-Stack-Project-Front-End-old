@@ -7,6 +7,8 @@ const signUpSuccess = function (data) {
   $('form').trigger('reset')
   $('#sign-in').show()
   $('#sign-up').hide()
+  $('#returning-user').hide()
+  $('#new-user').hide()
   $('#message').text('sign up successfull!')
 }
 
@@ -23,20 +25,23 @@ const signInSuccess = function (data) {
   store.user = data.user
   $('#message').text('')
   $('form').trigger('reset')
-  $('#message').text('')
   $('#sign-in').hide()
+  $('#sign-up').hide()
   $('#user-management').show()
   $('#postNewProject').show()
+  $('#returning-user').hide()
+  $('#new-user').hide()
   $('#message').text('succesfully signed in!')
 }
 
 const signInFailure = function (data) {
   $('#message').text('')
-  $('#message').text('Error beep boop')
   $('form').trigger('reset')
   $('#returning-user').show()
   $('#new-user').show()
   $('#sign-in').hide()
+  $('#sign-up').hide()
+  $('#message').text('Error beep boop')
 }
 
 const closeClick = function () {

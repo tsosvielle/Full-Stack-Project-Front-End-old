@@ -80,7 +80,6 @@ const deleteProject = function (id) {
 }
 
 const updateProject = function (id, data) {
-  console.log('api js ' + id + data)
   return $.ajax({
     url: config.apiUrl + `projects/${id}`,
     method: 'PATCH',
