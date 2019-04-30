@@ -44,6 +44,7 @@ that can handle those features. Choosing update opens project change fields in
 a new modal. Signin/up/out and account creation functionality is all available.
 
 User Stories:
+https://github.com/tsosvielle/Full-Stack-Project-Front-End/blob/master/userstories.md
 
 Wireframe and ERD:
 https://imgur.com/a/qbSPGj3
