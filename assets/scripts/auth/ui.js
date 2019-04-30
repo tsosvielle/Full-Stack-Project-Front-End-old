@@ -95,6 +95,7 @@ const projectReveal = function(){
 
 const clearProjects = function () {
   $('#content').empty()
+  $('#message').text('')
 }
 
 const newProjectSuccess = function (data) {
