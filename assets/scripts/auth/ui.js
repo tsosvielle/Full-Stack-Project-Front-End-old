@@ -16,6 +16,7 @@ const signUpFailure = function (data) {
   $('#message').text('Error beep boop')
   $('#returning-user').show()
   $('#new-user').show()
+  $('.signUpFields').hide()
 }
 
 const signInSuccess = function (data) {
