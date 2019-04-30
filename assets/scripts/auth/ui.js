@@ -103,11 +103,13 @@ const newProjectSuccess = function (data) {
   $('#postNewProject').hide()
   $('.content').html(showProjectsHtml)
   $('#newProject').hide()
+  $('#projectField').hide()
   $('#message').text('Project posted!')
 }
 
 const newProjectFailure = function (data) {
   $('#message').text('')
+  $('#projectField').hide()
   $('form').trigger('reset')
   $('#message').text('Error beep boop')
 }
