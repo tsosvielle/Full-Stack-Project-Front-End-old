@@ -97,6 +97,8 @@ const newProjectSuccess = function (data) {
   $('form').trigger('reset')
   $('#postNewProject').hide()
   $('.content').html(showProjectsHtml)
+  $('#newProject').hide()
+  $('#message').text('Project posted!')
 }
 
 const newProjectFailure = function (data) {
