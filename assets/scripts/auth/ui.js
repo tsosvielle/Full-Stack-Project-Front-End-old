@@ -168,5 +168,7 @@ module.exports = {
   deleteProjectFailure,
   deleteProjectSuccess,
   updateProjectSuccess,
-  updateProjectFailure
+  updateProjectFailure,
+  newProjectSuccess,
+  newProjectFailure
 }
