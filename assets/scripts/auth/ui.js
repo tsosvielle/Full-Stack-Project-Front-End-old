@@ -100,10 +100,11 @@ const clearProjects = function () {
 const newProjectSuccess = function (data) {
   $('#message').text('')
   $('form').trigger('reset')
-  $('#postNewProject').hide()
+  $('#postNewProject').show()
   $('.content').html(showProjectsHtml)
   $('#newProject').hide()
   $('.projectField').hide()
+  $('.projectDiv').hide()
   $('#message').text('Project posted!')
 }
 
@@ -111,6 +112,10 @@ const newProjectFailure = function (data) {
   $('#message').text('')
   $('#projectField').hide()
   $('form').trigger('reset')
+  $('#postNewProject').show()
+  $('.projectField').hide()
+  $('#newProject').hide()
+  $('.projectDiv').hide()
   $('#message').text('Error beep boop')
 }
 
