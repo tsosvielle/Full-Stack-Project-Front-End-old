@@ -9,7 +9,7 @@ const signUpSuccess = function (data) {
   $('#sign-up').hide()
   $('#returning-user').hide()
   $('#new-user').hide()
-  $('#message').text('sign up successfull!')
+  $('#message').text('Sign up successfull! Please login.')
 }
 
 const signUpFailure = function (data) {
