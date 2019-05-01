@@ -102,6 +102,7 @@ const newProjectSuccess = function (data) {
   $('#message').text('')
   $('form').trigger('reset')
   $('#postNewProject').show()
+  const showProjectsHtml = showProjectsTemplate({ projects: data.projects })
   $('.content').html(showProjectsHtml)
   $('#newProject').hide()
   $('.projectField').hide()
