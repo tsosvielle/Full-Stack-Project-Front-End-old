@@ -11,6 +11,7 @@ const newUserclick = function () {
   $('#new-user').hide()
   $('#returning-user').hide()
   $('#signIn').show()
+  $('#signUpButton').show()
   $('.signUpFields').show()
 }
 
