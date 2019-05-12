@@ -10,6 +10,8 @@ const newUserclick = function () {
   $('#sign-up').show()
   $('#new-user').hide()
   $('#returning-user').hide()
+  $('#signIn').show()
+  $('.signUpFields').show()
 }
 
 const returningUserclick = function () {
