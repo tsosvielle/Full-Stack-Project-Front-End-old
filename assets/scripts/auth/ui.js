@@ -82,7 +82,9 @@ const signOutSuccess = function () {
   $('#message').hide()
   $('#new-user').show()
   $('#postNewProject').hide()
+  $('#close').hide()
   $('#message').text('')
+
 
   store.user = null
 }
