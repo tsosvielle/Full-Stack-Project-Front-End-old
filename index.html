@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Collaborator</title>
+      <link rel="stylesheet" type="text/scss" href="/Users/trevor/sei/projects/full-stack-front-end/assets/styles/index.scss">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body >
+      <h1 id="title">Collaborator</h1>
+<input id='new-user' class="mybutton mybuttoncolor" type="submit" value="New User">
+<input id='returning-user' class="mybutton mybuttoncolor" type="submit" value="Returning User">
+
+<form id='sign-up'>
+<input class='signUpFields' type="email" name="credentials[email]" placeholder="email">
+<input class='signUpFields' type="text" name="credentials[password]" placeholder="password">
+<input class='signUpFields'type="text" name="credentials[password_confirmation]" placeholder="password_confirmation">
+<input id='signUpButton' class="mybutton mybuttoncolor" type="submit" value="Sign Up!">
+</form>
+<form id="sign-in">
+<input class='sign-in-fields'type="email" name="credentials[email]" placeholder="email"
+required>
+<input class='sign-in-fields'type="text" name="credentials[password]" placeholder="password">
+<input id='signInButton' class="mybutton mybuttoncolor" type="submit" value="Sign In!">
+</form>
+<form id="change-password">
+<input type="password" name="passwords[old]" placeholder="old password">
+<input type="password" name="passwords[new]" placeholder="new password">
+  <input type="submit" class="mybutton mybuttoncolor" value="Change Password!">
+</form>
+<input id='user-management' class="mybutton mybuttoncolor" type="submit" value="Manage account!">
+<form id="sign-out">
+<input type="submit" class="mybutton mybuttoncolor" value="Sign Out!">
+</form>
+<input id="close" class="mybutton mybuttoncolor" type="submit" value="Close">
+
+<input id='postNewProject' class="mybutton" type="submit" value="Post a project">
+<div class ="projectDiv">
+<form id='newProject'>
+  <input type="text" class="projectField" name="project[project_name]" placeholder="project name">
+  <input type="date" class="projectField" name="project[date]" placeholder="date created">
+  <input type="text" class="projectField" name="project[description]" placeholder="project description">
+  <input type="text" class="projectField" name="project[team_needs]" placeholder="team member requests">
+  <input type="email" class="projectField" name="project[contact_email]" placeholder="project lead email">
+  <input type="submit" class="projectField" value="Post!">
+</form>
+</div>
+
+
+
+<div class="nav-buttons">
+        <button id="getProjectsButton" class="mybutton btn btn-info mr-1">View all projects</button>
+        <button id="clearProjectsButton" class="mybutton btn btn-info mr-2">Clear view</button>
+      </div>
+
+<h1 id='message' class='message'></h1>
+
+<div id="content" class="content">
+</div>
+
+
+
+    </body>
+</html>
