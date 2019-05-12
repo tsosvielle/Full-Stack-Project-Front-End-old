@@ -41,6 +41,8 @@ const signInFailure = function (data) {
   $('#new-user').show()
   $('#sign-in').hide()
   $('#sign-up').hide()
+  $('#signUpButton').hide()
+  $('.signUpFields').hide()
   $('#message').text('Error beep boop')
 }
 
