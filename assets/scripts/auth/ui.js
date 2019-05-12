@@ -20,6 +20,8 @@ const signUpFailure = function (data) {
   $('#new-user').show()
   $('#signUp').hide()
   $('#signIn').hide()
+  $('#signUpButton').hide()
+  $('.signUpFields').hide()
 }
 
 const signInSuccess = function (data) {
