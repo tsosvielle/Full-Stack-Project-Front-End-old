@@ -32,6 +32,8 @@ const signInSuccess = function (data) {
   $('#sign-up').hide()
   $('#user-management').show()
   $('#postNewProject').show()
+  $('#getProjectsButton').show()
+  $('#clearProjectsButton').show()
   $('#returning-user').hide()
   $('#new-user').hide()
   $('#message').text('succesfully signed in!')
