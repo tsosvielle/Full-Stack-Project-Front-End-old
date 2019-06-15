@@ -3,6 +3,7 @@
     <head>
       <title>Collaborator</title>
       <link rel="stylesheet" type="text/scss" href="/Users/trevor/sei/projects/full-stack-front-end/assets/styles/index.scss">
+      <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,10 +13,20 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body >
-      <h1 id="title">Collaborator</h1>
-<input id='new-user' class="mybutton mybuttoncolor" type="submit" value="New User">
-<input id='returning-user' class="mybutton mybuttoncolor" type="submit" value="Returning User">
+    <body>
+
+<div class='nav-holder'>
+      <h1 id="title" class='title'>Collaborator</h1>
+
+<nav class="navbar nav navbar-default nav-buttons">
+  <ol>
+  <li id='new-user' class="mybutton mybuttoncolor btn btn-info mr-1" value="New User">New User</li>
+  <li id='returning-user' class="mybutton mybuttoncolor btn btn-info mr-1" value="Returning User">Returning User</li>
+        <li id="getProjectsButton" class="mybutton btn btn-info mr-1">View all projects</li>
+        <li id="clearProjectsButton" class="mybutton btn btn-info mr-1">Clear view</li>
+      </ol>
+      </nav>
+    </div>
 
 <form id='sign-up'>
 <input class='signUpFields' type="email" name="credentials[email]" placeholder="email">
@@ -38,6 +49,7 @@ required>
 <form id="sign-out">
 <input type="submit" class="mybutton mybuttoncolor" value="Sign Out!">
 </form>
+
 <input id="close" class="mybutton mybuttoncolor" type="submit" value="Close">
 
 <input id='postNewProject' class="mybutton" type="submit" value="Post a project">
@@ -54,10 +66,7 @@ required>
 
 
 
-<div class="nav-buttons">
-        <button id="getProjectsButton" class="mybutton btn btn-info mr-1">View all projects</button>
-        <button id="clearProjectsButton" class="mybutton btn btn-info mr-2">Clear view</button>
-      </div>
+
 
 <h1 id='message' class='message'></h1>
 

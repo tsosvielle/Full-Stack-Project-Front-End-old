@@ -1,6 +1,6 @@
 'use strict'
 const store = require('../store')
-const showProjectsTemplate = require('../templates/book-listing.handlebars')
+const showProjectsTemplate = require('../templates/project-listing.handlebars')
 
 const signUpSuccess = function (data) {
   $('#message').text('')
@@ -52,14 +52,20 @@ const signInFailure = function (data) {
 }
 
 const closeClick = function () {
-  $('#message').text('')
-  $('#user-management').show()
-  $('#postNewProject').show()
   $('#change-password').hide()
+  $('#message').text('')
+  $('#postNewProject').hide()
+  $('#sign-in').hide()
   $('#sign-out').hide()
-  $('#getProjectsButton').show()
+  $('#signUpButton').hide()
+  $('#user-management').hide()
+
   $('#clearProjectsButton').show()
   $('#close').hide()
+  $('#getProjectsButton').show()
+  $('#new-user').show()
+  $('#returning-user').show()
+  $('.signUpFields').hide()
 }
 
 const changePwSuccess = function (data) {
