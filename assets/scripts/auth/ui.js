@@ -9,13 +9,18 @@ const signUpSuccess = function (data) {
   $('#sign-up').hide()
   $('#returning-user').hide()
   $('#new-user').hide()
-  $('#message').text('Sign up successfull! Please login.')
+  $('#signUpModalTitle').hide()
+  $('#signUpMessage').show()
+  $('#signUpMessage').text('Sign up successfull! Please login.')
+
 }
 
 const signUpFailure = function (data) {
   $('#message').text('')
   $('form').trigger('reset')
-  $('#message').text('Error beep boop')
+  $('#signUpMessage').show()
+  $('#signUpMessage').text('Error beep boop')
+  $('#signUpModalTitle').hide()
   $('#returning-user').show()
   $('#new-user').show()
   $('#signUp').hide()
@@ -28,6 +33,7 @@ const signInSuccess = function (data) {
   store.user = data.user
   $('#message').text('')
   $('form').trigger('reset')
+  $('.close').hide()
   $('#sign-in').hide()
   $('#sign-up').hide()
   $('#user-management').show()
@@ -36,7 +42,9 @@ const signInSuccess = function (data) {
   $('#clearProjectsButton').show()
   $('#returning-user').hide()
   $('#new-user').hide()
+  $('#message').show()
   $('#message').text('succesfully signed in!')
+  $('#message').fadeOut(3000)
 }
 
 const signInFailure = function (data) {
@@ -48,7 +56,9 @@ const signInFailure = function (data) {
   $('#sign-up').hide()
   $('#signUpButton').hide()
   $('.signUpFields').hide()
+  $('#message').show()
   $('#message').text('Error beep boop')
+  $('#message').fadeOut(3000)
 }
 
 const closeClick = function () {
@@ -61,7 +71,7 @@ const closeClick = function () {
   $('#user-management').hide()
 
   $('#clearProjectsButton').show()
-  $('#close').hide()
+  $('.close').hide()
   $('#getProjectsButton').show()
   $('#new-user').show()
   $('#returning-user').show()
@@ -72,13 +82,17 @@ const changePwSuccess = function (data) {
   $('#message').text('')
   $('form').trigger('reset')
   $('#change-password').hide()
+  $('#message').show()
   $('#message').text('Succesfully changed password')
+  $('#message').fadeOut(3000)
 }
 
 const changePwFailure = function (data) {
   $('#message').text('')
   $('form').trigger('reset')
+  $('#message').show()
   $('#message').text('Error beep boop')
+  $('#message').fadeOut(3000)
 }
 
 const signOutSuccess = function () {
@@ -91,7 +105,7 @@ const signOutSuccess = function () {
   $('#message').hide()
   $('#new-user').show()
   $('#postNewProject').hide()
-  $('#close').hide()
+  $('.close').hide()
   $('#message').text('')
 
 
@@ -101,7 +115,9 @@ const signOutSuccess = function () {
 const signOutFailure = function () {
   $('#message').text('')
   $('form').trigger('reset')
+  $('#message').show()
   $('#message').text('Error beep boop')
+  $('#message').fadeOut(3000)
 }
 
 const projectReveal = function(){
@@ -122,7 +138,9 @@ const newProjectSuccess = function (data) {
   $('#newProject').hide()
   $('.projectField').hide()
   $('.projectDiv').hide()
+  $('#message').show()
   $('#message').text('Project posted!')
+  $('#message').fadeOut(3000)
 }
 
 const newProjectFailure = function (data) {
@@ -133,44 +151,58 @@ const newProjectFailure = function (data) {
   $('.projectField').hide()
   $('#newProject').hide()
   $('.projectDiv').hide()
+  $('#message').show()
   $('#message').text('Error beep boop')
+  $('#message').fadeOut(3000)
 }
 
 const getProjectsSuccess = (data) => {
   $('#message').text('')
   const showProjectsHtml = showProjectsTemplate({ projects: data.projects })
   $('.content').html(showProjectsHtml)
+  $('#message').show()
   $('#message').text('Active Projects')
+  $('#message').fadeOut(3000)
 }
 
 const getProjectFailure = function (data) {
   $('#message').text('')
   $('form').trigger('reset')
+  $('#message').show()
   $('#message').text('Error beep boop')
+  $('#message').fadeOut(3000)
 }
 
 const updateProjectSuccess = function (data) {
   $('#message').text('')
   $('form').trigger('reset')
+  $('#message').show()
   $('#message').text('Project updated!')
+  $('#message').fadeOut(3000)
 }
 
 const updateProjectFailure = function (data) {
   $('#message').text('')
   $('form').trigger('reset')
+  $('#message').show()
   $('#message').text('Error beep boop')
+  $('#message').fadeOut(3000)
 }
 
 const deleteProjectSuccess = function (data) {
   $('#message').text('')
   $('form').trigger('reset')
+  $('#message').show()
   $('#message').text('Successfully Deleted')
+  $('#message').fadeOut(3000)
 }
 
 const deleteProjectFailure = function (data) {
   $('#message').text('')
   $('form').trigger('reset')
+  $('#message').show()
   $('#message').text('Error beep boop')
+  $('#message').fadeOut(3000)
 }
 
 

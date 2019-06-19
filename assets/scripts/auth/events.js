@@ -7,12 +7,14 @@ const store = require('../store')
 
 const newUserclick = function () {
   $('#message').text('')
+  $('#signUpMessage').text('')
+  $('#signUpModalTitle').show()
   $('#sign-up').show()
   $('#new-user').hide()
   $('#returning-user').hide()
   $('#getProjectsButton').hide()
   $('#clearProjectsButton').hide()
-  $('#close').show()
+  $('.close').show()
   $('#signIn').show()
   $('#signUpButton').show()
   $('.signUpFields').show()
@@ -23,7 +25,7 @@ const returningUserclick = function () {
   $('#sign-in').show()
   $('#new-user').hide()
   $('#returning-user').hide()
-  $('#close').show()
+  $('.close').show()
 }
 
 const accountClick = function () {
@@ -31,7 +33,7 @@ const accountClick = function () {
   $('#change-password').show()
   $('#sign-out').show()
   $('#user-management').hide()
-  $('#close').show()
+  $('.close').show()
   $('#postNewProject').hide()
   $('#getProjectsButton').hide()
   $('#clearProjectsButton').hide()
@@ -121,7 +123,7 @@ const addHandlers = function () {
   $('#new-user').on('click', newUserclick)
   $('#returning-user').on('click', returningUserclick)
   $('#user-management').on('click', accountClick)
-  $('#close').on('click', ui.closeClick)
+  $('.close').on('click', ui.closeClick)
   $('#postNewProject').on('click', ui.projectReveal)
   $('#newProject').on('submit', onNewProject)
   $('#getProjectsButton').on('click', onShowProjects)
