@@ -22,10 +22,19 @@ const newUserclick = function () {
 
 const returningUserclick = function () {
   $('#message').text('')
+  $('#signInMessage').text('')
+  $('#signInModalTitle').show()
   $('#sign-in').show()
   $('#new-user').hide()
   $('#returning-user').hide()
   $('.close').show()
+  $('.sign-in-fields').show()
+  $('#signInButton').show()
+  $('#getProjectsButton').hide()
+  $('#clearProjectsButton').hide()
+  $('#signInButton').show()
+
+
 }
 
 const accountClick = function () {

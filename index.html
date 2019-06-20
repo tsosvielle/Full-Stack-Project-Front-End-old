@@ -21,7 +21,7 @@
 <nav class="navbar nav navbar-default nav-buttons">
   <ol>
   <li id='new-user' class="mybutton signUpButton mybuttoncolor btn btn-info mr-1" value="New User" data-toggle="modal" data-target="#signUpModal">New User</li>
-  <li id='returning-user' class="mybutton mybuttoncolor btn btn-info mr-1" value="Returning User">Returning User</li>
+  <li id='returning-user' class="mybutton signInButton  mybuttoncolor btn btn-info mr-1" value="Returning User" data-toggle="modal" data-target="#signInModal">Returning User</li>
         <li id="postNewProject" class="mybutton btn btn-info mr-1">Post a project!</li>
         <li id="getProjectsButton" class="mybutton btn btn-info mr-1">View all projects</li>
         <li id="clearProjectsButton" class="mybutton btn btn-info mr-1">Clear view</li>
@@ -33,7 +33,7 @@
     <div class="signUpModal modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <div id="signUpMessage" class="signUpMessage"></div>
+          <div id="signUpMessage" class="signUpcontent"></div>
 
           <div class="modal-header">
             <h5 class="signUpModalTitle modal-title" id="signUpModalTitle">Sign Up!</h5>
@@ -58,15 +58,38 @@
       </div>
     </div>
 
+    <div class="signInModal modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div id="signInMessage" class="signIncontent"></div>
+
+          <div class="modal-header">
+            <h5 class="signInModalTitle modal-title" id="signInModalTitle">Sign In!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id='sign-in'>
+            <input class='sign-in-fields'type="email" name="credentials[email]" placeholder="email"
+            required>
+            <input class='sign-in-fields'type="text" name="credentials[password]" placeholder="password">
+            <input id='signInButton' class="mybutton mybuttoncolor" type="submit" value="Sign In!">
+            <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Close">
+            </form>
+          </div>
+          <div class="modal-footer">
+
+
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 
-<form id="sign-in">
-<input class='sign-in-fields'type="email" name="credentials[email]" placeholder="email"
-required>
-<input class='sign-in-fields'type="text" name="credentials[password]" placeholder="password">
-<input id='signInButton' class="mybutton mybuttoncolor" type="submit" value="Sign In!">
-</form>
+
+
 <form id="change-password">
 <input type="password" name="passwords[old]" placeholder="old password">
 <input type="password" name="passwords[new]" placeholder="new password">

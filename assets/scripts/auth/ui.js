@@ -11,7 +11,11 @@ const signUpSuccess = function (data) {
   $('#new-user').hide()
   $('#signUpModalTitle').hide()
   $('#signUpMessage').show()
-  $('#signUpMessage').text('Sign up successfull! Please login.')
+  $('#signInMessage').text('Sign up successfull! Please login.')
+  $('#signUpModal').modal('hide');
+  $('#signInModal').modal('show');
+  $('#signInModalTitle').hide()
+
 
 }
 
@@ -42,9 +46,10 @@ const signInSuccess = function (data) {
   $('#clearProjectsButton').show()
   $('#returning-user').hide()
   $('#new-user').hide()
-  $('#message').show()
-  $('#message').text('succesfully signed in!')
-  $('#message').fadeOut(3000)
+  $('#signInModalTitle').hide()
+  $('#signInMessage').show()
+  $('#signInMessage').text('Sign in successfull!')
+  setTimeout(function() { $('#signInModal').modal('hide'); }, 2000);
 }
 
 const signInFailure = function (data) {
@@ -56,9 +61,9 @@ const signInFailure = function (data) {
   $('#sign-up').hide()
   $('#signUpButton').hide()
   $('.signUpFields').hide()
-  $('#message').show()
-  $('#message').text('Error beep boop')
-  $('#message').fadeOut(3000)
+  $('#signInMessage').show()
+  $('#signInMessage').text('Error beep boop')
+  $('#signInModalTitle').hide()
 }
 
 const closeClick = function () {
