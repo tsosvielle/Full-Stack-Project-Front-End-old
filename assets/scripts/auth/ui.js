@@ -4,11 +4,13 @@ const showProjectsTemplate = require('../templates/project-listing.handlebars')
 
 const aboutMe = function () {
   $('#content').empty()
+  $('#contact-me').hide()
   $('#about-me').show()
 }
 
 const contactMe = function (){
   $('#content').empty()
+  $('#about-me').hide()
   $('#contact-me').show()
 }
 
