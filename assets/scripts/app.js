@@ -11,5 +11,6 @@ $(() => {
   $('#newProject').hide()
   $('#postNewProject').hide()
   $('#changePassword').hide()
+  $('#about-me').hide()
   $('.goBack').hide()
 })

@@ -2,6 +2,11 @@
 const store = require('../store')
 const showProjectsTemplate = require('../templates/project-listing.handlebars')
 
+const aboutMe = function () {
+  $('#content').empty()
+  $('#about-me').show()
+}
+
 const signUpSuccess = function (data) {
   $('#message').text('')
   $('form').trigger('reset')
@@ -125,11 +130,13 @@ const projectReveal = function(){
 }
 
 const clearProjects = function () {
+  $('#about-me').hide()
   $('#content').empty()
   $('#message').text('')
 }
 
 const newProjectSuccess = function (data) {
+  $('#about-me').hide()
   $('#message').text('')
   $('form').trigger('reset')
   $('#postNewProject').show()
@@ -159,6 +166,7 @@ const newProjectFailure = function (data) {
 }
 
 const getProjectsSuccess = (data) => {
+  $('#about-me').hide()
   $('#message').text('')
   const showProjectsHtml = showProjectsTemplate({ projects: data.projects })
   $('.content').html(showProjectsHtml)
@@ -228,5 +236,6 @@ module.exports = {
   updateProjectSuccess,
   updateProjectFailure,
   newProjectSuccess,
-  newProjectFailure
+  newProjectFailure,
+  aboutMe
 }

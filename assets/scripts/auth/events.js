@@ -36,6 +36,7 @@ const returningUserclick = function () {
 }
 
 const accountClick = function () {
+  $('#about-me').hide()
   $('#message').text('')
   $('#changePassword').show()
   $('#sign-out').show()
@@ -107,7 +108,7 @@ const onShowProjects = (event) => {
 const onUpdateProject = function (event) {
   event.preventDefault()
   $('.modal-open').removeClass()
-   $('.fade').hide()
+  $('.fade').hide()
   const data = getFormFields(event.target)
   const id = $(event.target).data('id')
   api.updateProject(id, data)
@@ -131,6 +132,7 @@ const onDeleteProject = function (event) {
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
+  $('#about-me-button').on('click', ui.aboutMe)
   $('#changePassword').on('click', changePasswordClick)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('click', onSignOut)
