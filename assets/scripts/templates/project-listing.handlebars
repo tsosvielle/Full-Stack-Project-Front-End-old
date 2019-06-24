@@ -1,6 +1,8 @@
 {{#each projects as |project|}}
-  
-  <section data-id="{{project.id}}">
+
+  <section class="section-card" data-id="{{project.id}}">
+    <div id="card" class="card" style="width: 1000px;">
+      <div id="card-display" class="card-body">
     <h6>Project:</h6>
     <h3>
       {{project.project_name}}
@@ -30,6 +32,8 @@
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateModal-{{project.id}}">
   Update Content
 </button>
+</div>
+</div>
 
 <div class="modal fade" id="updateModal-{{project.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

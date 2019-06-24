@@ -4,6 +4,7 @@
       <title>Collaborator</title>
       <link rel="stylesheet" type="text/scss" href="/Users/trevor/sei/projects/full-stack-front-end/assets/styles/index.scss">
       <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -14,7 +15,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-
+<div id="wrapper" class="wrapper">
 <div class='nav-holder'>
       <h1 id="title" class='title'>Collaborator</h1>
 
@@ -22,10 +23,13 @@
   <ol>
   <li id='new-user' class="mybutton signUpButton mybuttoncolor btn btn-info mr-1" value="New User" data-toggle="modal" data-target="#signUpModal">New User</li>
   <li id='returning-user' class="mybutton signInButton  mybuttoncolor btn btn-info mr-1" value="Returning User" data-toggle="modal" data-target="#signInModal">Returning User</li>
-        <li id="postNewProject" class="mybutton btn btn-info mr-1">Post a project!</li>
+        <li id="postNewProject" class="mybutton btn btn-info mr-1" value="Post a project" data-toggle="modal" data-target="#newProjectModal">Post a project!</li>
         <li id="getProjectsButton" class="mybutton btn btn-info mr-1">View all projects</li>
         <li id="clearProjectsButton" class="mybutton btn btn-info mr-1">Clear view</li>
         <li id="user-management" class="mybutton btn btn-info mr-1">Manage Account</li>
+        <li id="changePassword" class="mybutton btn btn-info mr-1" value="Change your password" data-toggle="modal" data-target="#changePasswordModal">Change your Password!</li>
+        <li id="sign-out" class="mybutton btn btn-info mr-1">Sign out!</li>
+        <li id="goBack" class="goBack mybutton btn btn-info mr-1">Go back</li>
       </ol>
       </nav>
     </div>
@@ -86,34 +90,60 @@
       </div>
     </div>
 
+    <div class="changePasswordModal modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div id="changePasswordMessage" class="changePasswordContent"></div>
+
+          <div class="modal-header">
+            <h5 class="changePasswordModalTitle modal-title" id="changePasswordModalTitle">Change your password</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="change-password">
+            <input type="password" name="passwords[old]" placeholder="old password">
+            <input type="password" name="passwords[new]" placeholder="new password">
+              <input type="submit" class="mybutton mybuttoncolor" value="Change Password!">
+            </form>
+          </div>
+          <div class="modal-footer">
 
 
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="newProjectModal modal fade" id="newProjectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div id="newProjectMessage" class="newProjectContent"></div>
+
+      <div class="modal-header">
+        <h5 class="newProjectModalTitle modal-title" id="newProjectModalTitle">Post a project!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id='newProject'>
+          <input type="text" class="projectField" name="project[project_name]" placeholder="project name">
+          <input type="date" class="projectField" name="project[date]" placeholder="date created">
+          <input type="text" class="projectField" name="project[description]" placeholder="project description">
+          <input type="text" class="projectField" name="project[team_needs]" placeholder="team member requests">
+          <input type="email" class="projectField" name="project[contact_email]" placeholder="project lead email">
+          <input type="submit" class="projectField" value="Post!">
+        </form>
+      </div>
+      <div class="modal-footer">
 
 
-<form id="change-password">
-<input type="password" name="passwords[old]" placeholder="old password">
-<input type="password" name="passwords[new]" placeholder="new password">
-  <input type="submit" class="mybutton mybuttoncolor" value="Change Password!">
-</form>
-
-<form id="sign-out">
-<input type="submit" class="mybutton mybuttoncolor" value="Sign Out!">
-</form>
-
-<input id="close" class="close mybutton mybuttoncolor" type="submit" value="Close">
-
-<div class ="projectDiv">
-<form id='newProject'>
-  <input type="text" class="projectField" name="project[project_name]" placeholder="project name">
-  <input type="date" class="projectField" name="project[date]" placeholder="date created">
-  <input type="text" class="projectField" name="project[description]" placeholder="project description">
-  <input type="text" class="projectField" name="project[team_needs]" placeholder="team member requests">
-  <input type="email" class="projectField" name="project[contact_email]" placeholder="project lead email">
-  <input type="submit" class="projectField" value="Post!">
-</form>
+      </div>
+    </div>
+  </div>
 </div>
-
-
 
 
 
@@ -122,7 +152,11 @@
 <div id="content" class="content">
 </div>
 
+<footer id="site-footer" class="site-footer">
+A demonstration project developed with love by Trevor Sosvielle
+</footer>
 
 
+      </div>
     </body>
 </html>

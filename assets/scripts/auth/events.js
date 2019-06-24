@@ -14,7 +14,6 @@ const newUserclick = function () {
   $('#returning-user').hide()
   $('#getProjectsButton').hide()
   $('#clearProjectsButton').hide()
-  $('.close').show()
   $('#signIn').show()
   $('#signUpButton').show()
   $('.signUpFields').show()
@@ -27,7 +26,6 @@ const returningUserclick = function () {
   $('#sign-in').show()
   $('#new-user').hide()
   $('#returning-user').hide()
-  $('.close').show()
   $('.sign-in-fields').show()
   $('#signInButton').show()
   $('#getProjectsButton').hide()
@@ -39,13 +37,19 @@ const returningUserclick = function () {
 
 const accountClick = function () {
   $('#message').text('')
-  $('#change-password').show()
+  $('#changePassword').show()
   $('#sign-out').show()
   $('#user-management').hide()
-  $('.close').show()
   $('#postNewProject').hide()
   $('#getProjectsButton').hide()
   $('#clearProjectsButton').hide()
+  $('.goBack').show()
+}
+
+const changePasswordClick = function () {
+$('#change-password').show()
+$('#changePasswordModalTitle').show()
+$('#changePasswordMessage').hide()
 }
 
 const onSignUp = function (event) {
@@ -127,12 +131,13 @@ const onDeleteProject = function (event) {
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
+  $('#changePassword').on('click', changePasswordClick)
   $('#change-password').on('submit', onChangePassword)
-  $('#sign-out').on('submit', onSignOut)
+  $('#sign-out').on('click', onSignOut)
   $('#new-user').on('click', newUserclick)
   $('#returning-user').on('click', returningUserclick)
   $('#user-management').on('click', accountClick)
-  $('.close').on('click', ui.closeClick)
+  $('.goBack').on('click', ui.goBackClick)
   $('#postNewProject').on('click', ui.projectReveal)
   $('#newProject').on('submit', onNewProject)
   $('#getProjectsButton').on('click', onShowProjects)

@@ -37,7 +37,6 @@ const signInSuccess = function (data) {
   store.user = data.user
   $('#message').text('')
   $('form').trigger('reset')
-  $('.close').hide()
   $('#sign-in').hide()
   $('#sign-up').hide()
   $('#user-management').show()
@@ -66,30 +65,25 @@ const signInFailure = function (data) {
   $('#signInModalTitle').hide()
 }
 
-const closeClick = function () {
-  $('#change-password').hide()
+const goBackClick = function () {
   $('#message').text('')
-  $('#postNewProject').hide()
-  $('#sign-in').hide()
-  $('#sign-out').hide()
-  $('#signUpButton').hide()
-  $('#user-management').hide()
-
-  $('#clearProjectsButton').show()
-  $('.close').hide()
+  $('#postNewProject').show()
   $('#getProjectsButton').show()
-  $('#new-user').show()
-  $('#returning-user').show()
-  $('.signUpFields').hide()
+  $('#clearProjectsButton').show()
+  $('#user-management').show()
+  $('#changePassword').hide()
+  $('#sign-out').hide()
+  $('#goBack').hide()
 }
 
 const changePwSuccess = function (data) {
   $('#message').text('')
   $('form').trigger('reset')
+  $('#changePasswordModalTitle').hide()
   $('#change-password').hide()
-  $('#message').show()
-  $('#message').text('Succesfully changed password')
-  $('#message').fadeOut(3000)
+  $('#changePasswordMessage').show()
+  $('#changePasswordMessage').text('Password change successfull!')
+  setTimeout(function() { $('#changePasswordModal').modal('hide'); }, 2000);
 }
 
 const changePwFailure = function (data) {
@@ -104,13 +98,14 @@ const signOutSuccess = function () {
   $('#message').text('')
   $('form').trigger('reset')
   $('#user-management').hide()
-  $('#change-password').hide()
   $('#sign-out').hide()
   $('#returning-user').show()
   $('#message').hide()
   $('#new-user').show()
-  $('#postNewProject').hide()
-  $('.close').hide()
+  $('#getProjectsButton').show()
+  $('#clearProjectsButton').show()
+  $('#changePassword').hide()
+  $('.goBack').hide()
   $('#message').text('')
 
 
@@ -143,9 +138,10 @@ const newProjectSuccess = function (data) {
   $('#newProject').hide()
   $('.projectField').hide()
   $('.projectDiv').hide()
-  $('#message').show()
-  $('#message').text('Project posted!')
-  $('#message').fadeOut(3000)
+  $('#newProjectModalTitle').hide()
+  $('#newProjectMessage').show()
+  $('#newProjectMessage').text('Project Successfully posted!')
+  setTimeout(function() { $('#newProjectModal').modal('hide'); }, 2000);
 }
 
 const newProjectFailure = function (data) {
@@ -156,9 +152,10 @@ const newProjectFailure = function (data) {
   $('.projectField').hide()
   $('#newProject').hide()
   $('.projectDiv').hide()
-  $('#message').show()
-  $('#message').text('Error beep boop')
-  $('#message').fadeOut(3000)
+  $('#newProjectModalTitle').hide()
+  $('#newProjectMessage').show()
+  $('#newProjectMessage').text('Error Beep Boop')
+  setTimeout(function() { $('#newProjectModal').modal('hide'); }, 2000);
 }
 
 const getProjectsSuccess = (data) => {
@@ -217,7 +214,7 @@ module.exports = {
   signUpFailure,
   signInFailure,
   signInSuccess,
-  closeClick,
+  goBackClick,
   changePwSuccess,
   changePwFailure,
   signOutSuccess,
