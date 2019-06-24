@@ -7,6 +7,11 @@ const aboutMe = function () {
   $('#about-me').show()
 }
 
+const contactMe = function (){
+  $('#content').empty()
+  $('#contact-me').show()
+}
+
 const signUpSuccess = function (data) {
   $('#message').text('')
   $('form').trigger('reset')
@@ -131,12 +136,14 @@ const projectReveal = function(){
 
 const clearProjects = function () {
   $('#about-me').hide()
+  $('#contact-me').hide()
   $('#content').empty()
   $('#message').text('')
 }
 
 const newProjectSuccess = function (data) {
   $('#about-me').hide()
+  $('#contact-me').hide()
   $('#message').text('')
   $('form').trigger('reset')
   $('#postNewProject').show()
@@ -167,6 +174,7 @@ const newProjectFailure = function (data) {
 
 const getProjectsSuccess = (data) => {
   $('#about-me').hide()
+  $('#contact-me').hide()
   $('#message').text('')
   const showProjectsHtml = showProjectsTemplate({ projects: data.projects })
   $('.content').html(showProjectsHtml)
@@ -237,5 +245,6 @@ module.exports = {
   updateProjectFailure,
   newProjectSuccess,
   newProjectFailure,
-  aboutMe
+  aboutMe,
+  contactMe
 }

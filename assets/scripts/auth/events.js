@@ -133,6 +133,7 @@ const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#about-me-button').on('click', ui.aboutMe)
+  $('#contact-me-button').on('click', ui.contactMe)
   $('#changePassword').on('click', changePasswordClick)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('click', onSignOut)
